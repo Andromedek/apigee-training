@@ -1,0 +1,10 @@
+<Flow name="default">
+    <Description/>
+    <Request>
+    <Step>
+        <Name>RaiseFaultNotFound</Name>
+    </Step>
+    </Request>
+    <Response/>
+</Flow>
+    

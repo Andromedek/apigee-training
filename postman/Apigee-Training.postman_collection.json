@@ -1,0 +1,898 @@
+{
+	"info": {
+		"_postman_id": "f760d980-8f1c-4001-83eb-000e57f85b9f",
+		"name": "Apigee-Training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Management API - Create TargetServers",
+			"item": [
+				{
+					"name": "Add Target",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic {{BASICAUTH}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"host\": \"gcp-cs-training-01-prod.apigee.net\",\n    \"isEnabled\": true,\n    \"name\": \"TS-Retail\",\n    \"port\": 443\n}\n\n"
+						},
+						"url": {
+							"raw": "{{MGMTSVR}}/v1/o/{{ORG}}/e/{{ENV}}/targetservers",
+							"host": [
+								"{{MGMTSVR}}"
+							],
+							"path": [
+								"v1",
+								"o",
+								"{{ORG}}",
+								"e",
+								"{{ENV}}",
+								"targetservers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Target Servers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{BASICAUTH}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{MGMTSVR}}/v1/o/{{ORG}}/e/{{ENV}}/targetservers",
+							"host": [
+								"{{MGMTSVR}}"
+							],
+							"path": [
+								"v1",
+								"o",
+								"{{ORG}}",
+								"e",
+								"{{ENV}}",
+								"targetservers"
+							]
+						},
+						"description": "  List all the target servers for the org and env"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lab-03-01 - Your First API",
+			"item": [
+				{
+					"name": "GET categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/categories",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lab-03-02 - Named Target Servers",
+			"item": [
+				{
+					"name": "GET categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/categories",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET stores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/stores",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"stores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/products",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lab-04-02 - Secure your API",
+			"item": [
+				{
+					"name": "GET categories w/ API Key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/categories?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET stores w/ API Key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/stores?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"stores"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET products w/ API Key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/products?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"products"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lab-05-01 - Using your Access Token",
+			"item": [
+				{
+					"name": "OAuth20 - Client Credentials",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "xxxxxxxxxxxx",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{APIKEY}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"oauth",
+								"client_credential",
+								"accesstoken"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Access protected resources",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "SNV2CyubLG2Bz6HFzrBVmGKx6E2q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/products?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"products"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lab-05-02 - Threat Protection",
+			"item": [
+				{
+					"name": "OAuth20 - Client Credentials Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"orderNumber\": 342345,\n            \"lineItems\": [\n                { \"productId\": \"ME089LLA\", \"quantity\": 1 },\n                { \"productId\": \"MD388LLA\", \"quantity\": 2 }\n            ],\n            \"promisedDeliveryDate\": \"30 Jul 2018\",\n            \"deliveryNotes\": \"If not home, please place inside backyard gate\",\n            \"destination\": {\n                \"addressType\": \"home\",\n                \"address\": {\n                    \"streetAddr1\": \"1 Main St.\"\n                 }\n            }\n}\n"
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/order?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"order"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lab-05-03 - Rate Limiting",
+			"item": [
+				{
+					"name": "Spike Arrest - Quota",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/products?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"products"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lab-06-01 - Secured Backend w_ Shared Flow",
+			"item": [
+				{
+					"name": "Create KVM (for demo) Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{BASICAUTH}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n \"name\" : \"ProductsKVM\",\n \"encrypted\" : \"true\",\n \"entry\" : [ \n  {\n   \"name\" : \"backendId\",\n   \"value\" : \"svcacct\"\n  },\n  {\n   \"name\" : \"backendSecret\",\n   \"value\" : \"xxxxxxx\"\n  }\n ]\n}"
+						},
+						"url": {
+							"raw": "{{MGMTSVR}}/v1/organizations/emea-poc8/environments/{{ENV}}/keyvaluemaps",
+							"host": [
+								"{{MGMTSVR}}"
+							],
+							"path": [
+								"v1",
+								"organizations",
+								"emea-poc8",
+								"environments",
+								"{{ENV}}",
+								"keyvaluemaps"
+							]
+						},
+						"description": "Create an encrypted KVM for demo. The KVM contains a single apikey used for Google geomaps API."
+					},
+					"response": []
+				},
+				{
+					"name": "GET products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/products?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"products"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\"overall_rating\": 2.99}\n"
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/products/31001?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"products",
+								"31001"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lab-06-02 - Fault Handling",
+			"item": [
+				{
+					"name": "GET products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/products?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"products"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\"overall_rating\": 2.99}\n"
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/products/31001?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"products",
+								"31001"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lab-07-01 - Service Callout",
+			"item": [
+				{
+					"name": "GET stores",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/stores?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"stores"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET a store",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/stores/mall?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"stores",
+								"mall"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5bc3506f-0594-432f-ad2e-2f0ccd8ebe33",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc538125-61c5-473d-af0f-794274279e9c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Lab-07-02 - Mashups",
+			"item": [
+				{
+					"name": "GET a store",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/stores/mall?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"stores",
+								"mall"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "06bc5197-7c8b-4595-b34c-3dbd0d8467fa",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5a623c0f-2ba7-493b-9431-7ca054427023",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Lab-07-03 - Response Caching",
+			"item": [
+				{
+					"name": "GET products (cache)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{ORG}}-{{ENV}}.apigee.net/v1/retail/products?apikey={{APIKEY}}",
+							"protocol": "https",
+							"host": [
+								"{{ORG}}-{{ENV}}",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"v1",
+								"retail",
+								"products"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{APIKEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d1e18c2d-ff8e-4e51-af83-7a6139e93000",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b0b9db89-af8d-4c5a-926d-3c279a8cca61",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

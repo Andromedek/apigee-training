@@ -1,0 +1,17 @@
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="ServiceCalloutGeoLoc">
+    <DisplayName>ServiceCalloutGeoLoc</DisplayName>
+    <Properties/>
+    <Request>
+        <Set>
+            <QueryParams>
+                <QueryParam name="latlng">{lat},{long}</QueryParam>
+                <QueryParam name="key">~~REPLACE WITH API KEY~~</QueryParam>
+            </QueryParams>
+        </Set>
+    </Request>
+    <Response>calloutResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://maps.googleapis.com/maps/api/geocode/json</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

@@ -1,0 +1,13 @@
+<Flow name="GetStore">
+    <Request/>
+    <Response>
+        <Step>
+            <Name>ExtractStoreLatLong</Name>
+        </Step>
+        <Step>
+            <Condition>(lat != null) and (long != null)</Condition>
+            <Name>ServiceCalloutGeoLoc</Name>
+        </Step>
+    </Response>
+    <Condition>(proxy.pathsuffix MatchesPath "/stores/*") and (request.verb = "GET")</Condition>
+</Flow>

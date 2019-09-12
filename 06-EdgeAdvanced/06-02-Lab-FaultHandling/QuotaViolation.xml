@@ -1,0 +1,16 @@
+<AssignMessage async="false" continueOnError="false" enabled="true" 
+		name="QuotaViolation">
+	<DisplayName>QuotaViolation</DisplayName>
+	<FaultRules/>
+	<Properties/>
+	<Set>
+		<Headers/>
+		<Payload contentType="application/json">
+			{"error":"Quota Violation. Too many requests."}
+		</Payload>
+		<StatusCode>429</StatusCode>
+		<ReasonPhrase>Too Many Requests</ReasonPhrase>
+	</Set>
+	<IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+	<AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

@@ -1,0 +1,6 @@
+<FaultRules>
+    <FaultRule name="QuotaViolation">
+        <Condition>fault.name == "QuotaViolation"</Condition>
+        <Step><Name>QuotaViolation</Name></Step>
+    </FaultRule>
+</FaultRules>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KVMCredentials" mapIdentifier="ProductsKVM">
+    <DisplayName>KVMCredentials</DisplayName>
+    <Properties/>
+    <ExclusiveCache>false</ExclusiveCache>
+    <ExpiryTimeInSecs>300</ExpiryTimeInSecs>
+    <Get assignTo="private.backendId">
+        <Key>
+            <Parameter>backendId</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="private.backendSecret">
+        <Key>
+            <Parameter>backendSecret</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

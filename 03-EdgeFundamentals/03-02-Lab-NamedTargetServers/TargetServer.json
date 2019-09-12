@@ -1,0 +1,6 @@
+{
+    "host": "gcp-cs-training-01-prod.apigee.net",
+    "isEnabled": true,
+    "name": "TS-Retail",
+    "port": 443
+}
