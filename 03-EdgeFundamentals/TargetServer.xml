@@ -1,9 +1,0 @@
-<HTTPTargetConnection>
-    <!--+
-        | *** URL>https://gcp-cs-training-01-prod.apigee.net/training/db</URL 
-        +-->        
-    <LoadBalancer>
-        <Server name="TS-Retail"/>
-    </LoadBalancer>
-    <Path>/training/db</Path>
-</HTTPTargetConnection>
